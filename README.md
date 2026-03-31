@@ -1,6 +1,17 @@
 # BB84 Quantum Key Distribution Simulator
-### AIM3231 — Emerging Tools & Technologies Lab | VI Semester | Jan–May 2026
-### Manipal University Jaipur — B.Tech CSE (AI & ML)
+
+---
+
+## Previews
+
+### Web Interface(Without Eavesdroping)
+![Web UI Preview](UI_preview.png)
+
+### Web Interface(With Eavesdroping)
+![Web UI Preview](UI_Eve_preview.png)
+
+### CLI Output
+![CLI Preview](CLI_preview.png)
 
 ---
 
@@ -31,8 +42,8 @@ BB84 solves this at the physics level. Its security rests on the **No-Cloning Th
   Alice                  Quantum Channel                   Bob
     │                                                        │
     │  Encodes each bit as a qubit in a random basis         │
-    │  Z-basis : 0 → |0⟩    1 → |1⟩  (Rectilinear)         │
-    │  X-basis : 0 → |+⟩    1 → |−⟩  (Diagonal)            │
+    │  Z-basis : 0 → |0⟩    1 → |1⟩  (Rectilinear)           │
+    │  X-basis : 0 → |+⟩    1 → |−⟩  (Diagonal)              │
     │ ─────────────────────────────────────────────────────► │
     │                                                        │
     │              ┌─────────────────┐                       │
@@ -75,37 +86,6 @@ P(error | Eve present) = P(Eve wrong basis) × P(Bob gets wrong bit)
 ```
 
 A clean channel produces 0% QBER. The 11% threshold is chosen to allow for realistic hardware noise while still reliably detecting Eve.
-
----
-
-## Simulation Results
-
-```
-── Scenario A — No Eavesdropper ──────────────────────
-  Raw qubits transmitted   : 200
-  Sifted key length        :  93   (46.5% of raw)
-  Bits used for QBER check :  46
-  Errors in QBER sample    :   0
-  QBER                     :  0.00%
-  Security threshold       : 11.0%
-  Decision                 : ✅ CHANNEL SECURE — KEY ACCEPTED
-  Final key length         : 47 bits
-
-── Scenario B — Eve Present ──────────────────────────
-  Raw qubits transmitted   : 200
-  Sifted key length        : 103   (51.5% of raw)
-  Bits used for QBER check :  51
-  Errors in QBER sample    :  13
-  QBER                     : 25.49%
-  Security threshold       : 11.0%
-  Decision                 : 🚨 EAVESDROPPER DETECTED — KEY DISCARDED
-
-Theory vs Simulation
-  Expected QBER (no Eve)   :  ~0.00%
-  Expected QBER (Eve)      : ~25.00%
-  Observed  (no Eve)       :   0.00%  ✓
-  Observed  (with Eve)     :  25.49%  ✓
-```
 
 ---
 
