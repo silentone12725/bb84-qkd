@@ -4,10 +4,10 @@
 
 ## Previews
 
-### Web Interface(Without Eavesdroping)
+### Web Interface ( Without Eavesdroping )
 ![Web UI Preview](UI_preview.png)
 
-### Web Interface(With Eavesdroping)
+### Web Interface ( With Eavesdroping )
 ![Web UI Preview](UI_Eve_preview.png)
 
 ### CLI Output
